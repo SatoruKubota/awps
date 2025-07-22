@@ -13,17 +13,28 @@
 	</form>
 
 	<h1>勤怠情報を検索</h1>
-	
+
 	<form th:action="@{/search-result}" method="POST" th:object="${searchForm}">
 		<br>
 		<input type="text" th:field="*{userId}">
 		<br>ユーザーID<br>
-		
+
 		<input type="date" th:field="*{date}">
 		<br>日付<br>
-		
+
 		<input type="submit" value="検索" class="btn">
 	</form>
+
+
+	<div th:if="${searchResult} != null">
+		<h2>勤怠情報</h2>
+
+		<p th:text="${searchResult.start}"></p>
+		<p th:text="${searchResult.finish}"></p>
+		<p th:text="${searchResult.breakTime}"></p>
+
+
+	</div>
 
 </body>
 

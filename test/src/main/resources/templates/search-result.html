@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>検索結果</title>
+</head>
+
+<body>
+
+	<form th:action="@{/menu-sample}" method="GET">
+		<input type="submit" value="ホームに戻る" class="btn">
+	</form>
+
+	<div th:object="${searchForm}">
+		【ユーザーID】<br>
+		<p th:text="*{userId}"></p><br><br>
+		【日付】<br>
+		<p th:text="*{date}"></p><br><br>
+	</div>
+
+</body>
+
+</html>

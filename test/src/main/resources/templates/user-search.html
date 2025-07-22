@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>勤怠検索</title>
+</head>
+
+<body>
+
+	<form th:action="@{/menu-sample}" method="GET">
+		<input type="submit" value="ホームに戻る" class="btn">
+	</form>
+
+	<h1>勤怠情報を検索</h1>
+	
+	<form th:action="@{/search-result}" method="POST" th:object="${searchForm}">
+		<br>
+		<input type="text" th:field="*{userId}">
+		<br>ユーザーID<br>
+		
+		<input type="date" th:field="*{date}">
+		<br>日付<br>
+		
+		<input type="submit" value="検索" class="btn">
+	</form>
+
+</body>
+
+</html>

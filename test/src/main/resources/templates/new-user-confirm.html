@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>新規登録確認</title>
+</head>
+
+<body>
+	
+	<h2>新規ユーザー登録確認画面</h2>
+	
+	<p>以下の情報を登録します</p>
+	
+	<form th:action="@{/new-user-request}" method="GET">
+		<input type="submit" value="キャンセル" class="btn">
+	</form>
+
+	<form th:action="@{/new-user-complete}" method="GET">
+		<input type="submit" value="登録" class="btn">
+	</form>
+</body>
+
+</html>

@@ -8,7 +8,7 @@
 
 <body>
 
-	<form th:action="@{/menu-sample}" method="GET">
+	<form th:action="@{/user-menu-sample}" method="GET">
 		<input type="submit" value="ホームに戻る" class="btn">
 	</form>
 
@@ -26,15 +26,16 @@
 	</form>
 
 
-	<div th:if="${searchResult} != null">
-		<h2>勤怠情報</h2>
-
-		<p th:text="${searchResult.start}"></p>
-		<p th:text="${searchResult.finish}"></p>
-		<p th:text="${searchResult.breakTime}"></p>
-
-
+	<div th:if="${searchResult} != null and not ${searchResult.empty}">
+		<h2>検索結果</h2>
+		<div th:each="kintai : ${searchResult}">
+			<p th:text="${kintai.workMode}"></p>
+			<p th:text="${kintai.start}"></p>
+			<p th:text="${kintai.finish}"></p>
+			<p th:text="${kintai.breakTime}"></p>
+		</div>
 	</div>
+
 
 </body>
 

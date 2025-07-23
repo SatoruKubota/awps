@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ユーザー新規登録</title>
+</head>
+
+<body>
+	
+	<form th:action="@{/admin-menu-sample}" method="GET">
+		<input type="submit" value="ホームに戻る" class="btn">
+	</form>
+	
+
+	<form th:action="@{/new-user-confirm}" method="POST" th:object="${newUserForm}">
+		<br>
+		ユーザーID
+		<input type="text" th:field="*{userId}">
+
+		性
+		<input type="text" th:field="*{familyName}">
+		
+		名
+		<input type="text" th:field="*{firstName}">
+		
+		メールアドレス
+		<input type="text" th:field="*{mailAddress}">
+		
+		パスワード
+		<input type="text" th:field="*{password}">
+		
+		所属部署
+		<input type="text" th:field="*{busyoId}">
+
+
+
+		<input type="submit" value="登録" class="btn">
+	</form>
+	
+	
+</body>
+
+</html>

@@ -4,41 +4,42 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ユーザー新規登録</title>
+
 </head>
 
 <body>
-	
+
 	<form th:action="@{/admin-menu-sample}" method="GET">
 		<input type="submit" value="ホームに戻る" class="btn">
 	</form>
-	
+
 
 	<form th:action="@{/new-user-confirm}" method="POST" th:object="${newUserForm}">
 		<br>
 		ユーザーID
-		<input type="text" th:field="*{userId}">
+		<input type="text" th:field="*{userId}"><br><br>
 
 		性
-		<input type="text" th:field="*{familyName}">
-		
+		<input type="text" th:field="*{familyName}"><br><br>
+
 		名
-		<input type="text" th:field="*{firstName}">
-		
+		<input type="text" th:field="*{firstName}"><br><br>
+
 		メールアドレス
-		<input type="text" th:field="*{mailAddress}">
-		
+		<input type="text" th:field="*{mailAddress}"><br><br>
+
 		パスワード
-		<input type="text" th:field="*{password}">
-		
+		<input type="text" th:field="*{password}"><br><br>
+
 		所属部署
-		<input type="text" th:field="*{busyoId}">
+		<input type="text" th:field="*{busyoId}"><br><br><br><br>
 
 
 
 		<input type="submit" value="登録" class="btn">
 	</form>
-	
-	
+
+
 </body>
 
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>新規登録完了</title>
+
+	<script>
+		// ページが完全に読み込まれたときに実行する処理
+		window.onload = function () {
+			// 5秒後に入力画面（attendance.html）に自動で遷移する
+			setTimeout(() => {
+				window.location.href = 'http://localhost:8080/new-user-regist';
+			}, 5000);
+		};
+	</script>
+
+</head>
+
+<body>
+
+	<h1>新規ユーザーの登録が完了しました！</h1>
+
+	<a th:href="@{/new-user-regist}">戻らない場合はこちら</a>
+
+
+</body>
+
+</html>

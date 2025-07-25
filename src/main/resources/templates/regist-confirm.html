@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>勤怠登録確認</title>
+</head>
+
+
+<body>
+
+	<h2>勤怠登録確認画面</h2>
+
+	<p>以下の情報を登録します</p>
+
+	<div th:object="${registForm}">
+
+		<p>ユーザーID：<span th:text="*{userId}"></span></p>
+		<p>日付：<span th:text="${#temporals.format(registForm.date, 'yyyy-MM-dd')}"></span></p>
+		<p>出勤形態：<span th:text="*{workMode}"></span></p>
+		<p>出勤時間：<span th:text="${#temporals.format(registForm.start, 'HH:mm')}"></span></p>
+		<p>退勤時間：<span th:text="${#temporals.format(registForm.finish, 'HH:mm')}"></span></p>
+		<p>休憩時間：<span th:text="*{breakTime}"></span></p>
+
+	</div>
+
+
+	<form th:action="@{/regist-kintai}" method="GET">
+		<input type="submit" value="キャンセル" class="btn">
+	</form>
+
+	<form th:action="@{/regist-complete}" method="GET">
+		<input type="submit" value="登録" class="btn">
+	</form>
+
+</body>
+
+</html>

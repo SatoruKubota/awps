@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>勤怠登録</title>
+</head>
+
+<body>
+
+	<p>勤怠ページ</p>
+	<h2>勤怠登録</h2>
+
+	<form th:action="@{/regist-confirm}" method="POST" th:object="${registForm}">
+		<br>
+		<input type="text" th:field="*{userId}">
+		<br>ユーザーID<br>
+
+		<input type="date" th:field="*{date}">
+		<br>日付<br>
+
+		<!--		<input type="text" th:field="*{workMode}">-->
+		<!--		<br>勤務形態<br>-->
+
+		<div class="radio-group">
+			<label><input type="radio" name="work_type" value="出勤" required th:field="*{workMode}">出勤</label>
+			<label><input type="radio" name="work_type" value="振出" th:field="*{workMode}">振出</label>
+			<label><input type="radio" name="work_type" value="振休" th:field="*{workMode}">振休</label>
+			<label><input type="radio" name="work_type" value="年休" th:field="*{workMode}">年休</label>
+			<label><input type="radio" name="work_type" value="欠勤" th:field="*{workMode}">欠勤</label>
+		</div>
+
+
+		<input type="time" th:field="*{start}">
+		<br>出勤時間<br>
+
+		<input type="time" th:field="*{finish}">
+		<br>退勤時間<br>
+
+		<input type="text" th:field="*{breakTime}">
+		<br>休憩時間<br>
+
+		<input type="submit" value="登録" class="btn">
+	</form>
+
+</body>
+
+</html>

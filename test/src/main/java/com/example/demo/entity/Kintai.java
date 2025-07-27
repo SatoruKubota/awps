@@ -1,7 +1,7 @@
 package com.example.demo.entity;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,13 +12,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Kintai {
 
-    private Date date;
+	private Integer userId;
+    private LocalDate date;
     private Boolean attendFlag; 
     private Boolean tfAttendFlag;
     private Boolean subHolidayFlag; 
     private Boolean wdFlag;
-    private Time start;
-    private Time finish;
+    private LocalTime start;
+    private LocalTime finish;
     private Integer breakTime;
     private Integer workingTime;
     private Integer ot;
@@ -26,5 +27,6 @@ public class Kintai {
     private Integer pvGet;
     private Integer subHolidayGet;
     private String workMode;
+
 
 }

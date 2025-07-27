@@ -8,5 +8,7 @@ import com.example.demo.entity.Kintai;
 public interface KintaiRepository {
 	
 	List<Kintai> selectByUserIdAndDate(Integer userId, Date date);
+	
+	void add(Kintai kintai);
 
 }
